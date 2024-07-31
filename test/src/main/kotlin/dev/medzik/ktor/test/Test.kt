@@ -18,8 +18,8 @@ class Test {
     }
 
     @POST("/secondTest")
-    fun secondTest() {
-        println("Test")
+    suspend fun secondTest(call: ApplicationCall) {
+        call.respond("Second test")
     }
 }
 
