@@ -17,6 +17,5 @@ dependencies {
     implementation("com.squareup:kotlinpoet:1.18.1")
     implementation("com.squareup:kotlinpoet-ksp:1.18.1")
 
-    implementation("io.ktor:ktor-client-core-jvm:2.3.12")
-    implementation("io.ktor:ktor-server-netty-jvm:2.3.12")
+    implementation("io.ktor:ktor-server-core:2.3.12")
 }
