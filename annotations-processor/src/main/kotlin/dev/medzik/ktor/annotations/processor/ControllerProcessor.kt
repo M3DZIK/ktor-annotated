@@ -103,7 +103,7 @@ class ControllerProcessor(private val codeGenerator: CodeGenerator) {
         val codeBlockBuilder = CodeBlock.builder()
 
         routes.forEach {
-            val finalRoute = "$controllerRoute/$it"
+            val finalRoute = "$controllerRoute$it"
 
             codeBlockBuilder
                 .addStatement("// ${method.value} $finalRoute")
