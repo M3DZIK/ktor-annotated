@@ -20,6 +20,10 @@ dependencies {
     testImplementation("io.ktor:ktor-server-test-host:2.3.12")
 }
 
+kotlin {
+    jvmToolchain(11)
+}
+
 tasks.test {
     useJUnitPlatform()
 }
