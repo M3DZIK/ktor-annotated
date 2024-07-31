@@ -46,6 +46,7 @@ class ControllerProcessor(private val codeGenerator: CodeGenerator) {
         }
 
         val generatedClass = TypeSpec.objectBuilder("${className.simpleName}Generated")
+            .addModifiers(KModifier.INTERNAL)
             .addProperty(
                 PropertySpec.builder("controller", controller.toClassName())
                     .addModifiers(KModifier.PRIVATE)
