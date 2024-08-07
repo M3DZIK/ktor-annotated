@@ -1,25 +1,24 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
-    kotlin("jvm")
+    alias(libs.plugins.kotlin.jvm)
 }
 
-group = "dev.medzik.ktor"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation("com.google.devtools.ksp:symbol-processing-api:2.0.0-1.0.23")
-    implementation(projects.annotations)
-    implementation(kotlin("reflect"))
-
-    implementation("com.squareup:kotlinpoet:1.18.1")
-    implementation("com.squareup:kotlinpoet-ksp:1.18.1")
-
-    implementation("io.ktor:ktor-server-core:2.3.12")
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 kotlin {
-    jvmToolchain(11)
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_11
+    }
+}
+
+dependencies {
+    implementation(libs.kotlinpoet)
+    implementation(libs.kotlinpoet.ksp)
+    implementation(libs.ksp.api)
+    implementation(libs.ktor.server.core)
+    implementation(projects.annotations)
 }
